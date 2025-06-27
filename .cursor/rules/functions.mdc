@@ -1,0 +1,44 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+addCurrency(isoCode: string): void  
+Adds a new currency to the user's selection.  
+- Checks AsyncStorage list; adds if not present.  
+- Updates AsyncStorage.  
+- Updates selectedCurrencies state (which re-renders the currency list).
+
+removeCurrency(isoCode: string): void  
+Removes a currency from the selection.  
+- Reads and updates AsyncStorage list.  
+- Updates selectedCurrencies state (which re-renders the currency list).
+
+convertAllValues(activeIso: string, activeValue: number, rates: Record<string, number>): Record<string, number | null>  
+Converts the active currency to all selected currencies.  
+- Converts activeValue → USD → other currencies.  
+- If `rates[activeIso] === 0` or missing, returns all nulls.  
+- Returns rounded values.  
+- If rate is missing, returns null for that ISO.
+
+useExchangeRates(): { rates: Record<string, number>, isStale: boolean }  
+Handles exchange rate loading, caching, and freshness.  
+- Checks AsyncStorage for rates + lastUpdated.  
+- If missing or stale (>24h), fetches new data.  
+- Logs errors on failure.  
+- Falls back to last known good data if needed.
+
+filterCurrencies(query: string): CurrencyMeta[]  
+Filters static currency metadata (currencies.json) by:  
+- ISO code (e.g., “GBP”)  
+- Name (e.g., “British Pound”)  
+- Alias (e.g., “sterling”)  
+- Case-insensitive match.
+
+validateNumericInput(input: string): boolean  
+Validates that an input string is numeric:  
+- Only digits + decimal point.  
+- Max length = 12.  
+- Does not mutate input.  
+- UI layer should separately truncate/sanitize inputs if needed.
+

@@ -1,0 +1,47 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+App Name: Personal Currency Converter
+
+Core Purpose  
+A single-screen iOS app that enables the user (a frequent traveler) to convert a currency amount into multiple other selected currencies instantly. The app is optimized for quick, offline-friendly usage and provides real-time conversions using exchange rates updated once every 24 hours.
+
+Target Audience  
+This app is for personal use by the developer, primarily during international travel. The user values speed, simplicity, and clean design with no clutter or distractions. It is not intended for public release at this stage.
+
+Key Features (MVP)  
+- Single-screen interface listing user-selected currencies.  
+- Search modal to add new currencies using ISO codes or aliases.  
+- Tap any currency row to activate it as the input field. Only one currency can be edited at a time.  
+- Live value conversion between multiple currencies.  
+- Exchange Freaks API integration with rates updated every 24h.  
+- Persistent storage of selected currencies and latest exchange rates.  
+- Reset input behavior: values reset on app reload, but currency selections and rates persist.  
+- Manual currency removal using an "X" or trash icon.  
+- Warn user if exchange rates are older than 24h.
+
+Technology Stack  
+- React Native + Expo Go (iOS testing)  
+- AsyncStorage for local persistence  
+- Static JSON file for currency metadata (ISO, names, aliases)  
+- Exchange Freaks API for live exchange rates  
+
+Design Philosophies  
+- Clean Architecture: Clear separation of concerns across UI, logic, and data layers.  
+- Component-driven development: Reusable, isolated, testable UI components.  
+- Minimal UI/UX: Fast, clutter-free experience suitable for on-the-go usage.
+
+Known Constraints  
+- API updates only once per 24 hours on free tier.  
+- No user authentication.  
+- No gesture or swipe UI for MVP.
+
+Future Features (Not in MVP)  
+- Gesture-based interactions (e.g., swipe to delete).  
+- Persisting input values between sessions.  
+- Grouping or favoriting currencies.  
+- Theme or UI customization options.  
+- Support for offline rate updates or historical data.
+

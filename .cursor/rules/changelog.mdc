@@ -1,0 +1,26 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 📜 Changelog
+
+All significant changes to code, architecture, or planning files are logged here. This log ensures traceability and historical understanding of what changed and why.
+
+Use the format below for each new entry.
+
+---
+
+### YYYY-MM-DD
+- [Change] Brief but specific description of what changed  
+  Files: `filename1.ext`, `filename2.ext`, ...
+
+✅ Example:
+
+md
+Copy
+Edit
+### 2025-06-26
+- [Added] Initial folder structure and core documentation files  
+  Files: `overview.md`, `architecture.md`, `workflow.mdc`, `lessonslearned.mdc`, `changelog.md`
+

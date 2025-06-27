@@ -1,0 +1,31 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Accumulated lessons from bugs, fixes, insights, and workflow discoveries
+alwaysApply: true
+---
+
+# 💡 Lessons Learned
+
+Each entry documents a reusable insight gained during this project — typically after solving a bug, improving architecture, resolving confusion, or identifying a better pattern. These notes exist to prevent repeated mistakes and establish consistent principles across all future work.
+
+---
+
+### YYYY-MM-DD — [Short Theme or Insight Name]
+- What happened: Describe the situation or issue encountered.
+- What was learned: Summarize the core insight gained.
+- How to apply it: Explain how this insight can help avoid similar issues in the future.
+
+✅ Example:
+
+md
+Copy
+Edit
+### 2025-06-26 — Avoid Caching Before Mount
+- What happened: Fetched and cached exchange rates before component mount, which caused race conditions.
+- What was learned: Side effects like data fetching should happen inside `useEffect` with safe guards.
+
+- How to apply it: Use `useEffect` with proper guards to control when network or storage operations occur.

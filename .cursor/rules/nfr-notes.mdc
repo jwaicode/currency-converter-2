@@ -1,0 +1,24 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+Non-Functional Requirements
+
+Performance  
+- App should respond to input and state changes within 300ms on mid/low-tier mobile devices.
+
+Offline Support  
+- If API fetch fails, app must fall back to previously cached exchange rates.  
+- Must not crash or become unusable during API failures or when offline.
+
+Data Constraints  
+- Max input length: 12 characters.  
+- Gracefully handle inputs that are too long or contain invalid characters.
+
+Scalability (UI)  
+- App should perform reasonably even if user adds >20 currencies.
+
+User Feedback  
+- A visual indicator should appear if rates are stale (>24h).
+

@@ -1,0 +1,49 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+✅ MVP Phase Plan
+
+Phase 1: Project Setup & Static Data  
+- Init React Native project with Expo Go.  
+- Define folder structure.  
+- Add static currencies.json.  
+- Build and test filterCurrencies.
+
+Phase 2: UI Layout & Input System  
+- Build main screen layout.  
+- Add dynamic currency row list.  
+- Add “+” button.  
+- Dismiss keyboard on background tap.  
+- Add CurrencyRow component.  
+- Enable single editable row state.  
+- Store active ISO + input value.
+
+Phase 3: Search Modal  
+- Build modal for adding currencies.  
+- Hook up filterCurrencies with alias support.  
+- Connect selection to addCurrency.  
+- Persist selectedCurrencies in AsyncStorage.
+
+Phase 4: Conversion System  
+- Add useExchangeRates hook.  
+- Fetch and store rates (24h logic).  
+- Show “stale rate” warning if needed.  
+- Implement convertAllValues.  
+- Display converted values in rows.
+
+Phase 5: Deletion + Input Handling  
+- Add remove button (calls removeCurrency).  
+- Validate user input using validateNumericInput.  
+- Handle edge cases (0, large, partials).
+
+Phase 6: Polish & QA  
+- Confirm persistence works across app restarts.  
+- Simulate API failure fallback.  
+- Ensure stale-rate indicator behaves correctly.  
+- Final UI tweaks: spacing, naming, clarity.
+
+🧩 Post-MVP Note  
+- Refactor conversion and persistence logic into a global store (e.g. Zustand or Context) if app complexity increases.
+

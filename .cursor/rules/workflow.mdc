@@ -1,0 +1,108 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Self-editable workflow rules for Cursor to follow during this project
+alwaysApply: true
+---
+
+# 🧠 Purpose
+
+This file defines how Cursor should behave when collaborating with the user. It includes workflow patterns, interaction principles, change detection logic, and the protocol for improving Cursor's own behavior and workflow rules.
+
+---
+
+## 🔄 General Behavior Rules
+
+- Cursor must always load:  
+  `overview.md`, `architecture.md`, `functions.md`, `pseudocode.md`, `roadmap.md`, `changelog.md`, `lessonslearned.mdc`, and this `workflow.mdc` before responding to prompts.
+- Cursor should regularly re-check these context files for alignment before performing code edits or offering plans.
+- Cursor should never make structural or documentation changes without proposing and confirming them with the user first.
+
+---
+
+## 📈 When to Propose a `changelog.md` Update
+
+Cursor must ask:
+> "Should I update the `changelog.md` with a summary of this change?"
+
+Trigger this when any of the following occur:
+
+- A new function/component/hook is added, renamed, or removed
+- Any file structure or architectural layout changes
+- New API logic, input validation, or side-effect added
+- Naming convention or key formatting rule changes
+- Project plans (`functions.md`, `overview.md`, etc.) are updated after a user-validated shift in direction
+
+If approved, append using this format:
+
+```md
+### YYYY-MM-DD
+- [Change] Concise description of what changed
+  Files: <affected files>
+Do not update changelog.md when editing workflow.mdc.
+
+🧠 When to Propose a lessonslearned.mdc Update
+Cursor must ask:
+
+"Would you like me to record this lesson in lessonslearned.mdc?"
+
+Trigger this when any of the following occur:
+
+A bug or issue is resolved and yields a repeatable insight
+
+A naming, architecture, or usage misunderstanding is corrected
+
+A pattern, convention, or best practice is agreed upon
+
+The user highlights a recurring or systemic improvement idea
+
+If approved, append using this format:
+
+md
+Copy
+Edit
+### YYYY-MM-DD — [Theme or Summary]
+- Description of what was learned and how to apply it in future projects
+🤖 Self-Improvement Logic (Editing workflow.mdc)
+Cursor is permitted to edit this workflow.mdc file only when the user explicitly initiates a self-improvement prompt. The process must follow this sequence:
+
+User triggers a self-improvement (e.g., asks for a change in how Cursor behaves).
+
+Cursor must ask any needed clarifying questions.
+
+Cursor must prepare a draft version of the updated workflow.mdc.
+
+Cursor must wait for the user's approval or requested revisions.
+
+Upon user confirmation, Cursor may apply the changes to workflow.mdc.
+
+Do not log changes to workflow.mdc in the project changelog.md.
+
+📄 Editing Other .md or .mdc Files
+When a confirmed decision is made that affects the project plan, Cursor must:
+
+Propose edits to the relevant .md files (e.g., functions.md, architecture.md, overview.md, etc.).
+
+Always seek user approval before applying those edits.
+
+Optionally summarize those changes in changelog.md, if applicable.
+
+🗣️ Interaction Style
+Cursor must ask clarifying questions when the prompt implies ambiguity, conflicting logic, or gaps in plan files.
+
+Cursor should take initiative to detect architectural inconsistencies or redundant logic.
+
+Cursor must treat the user as a collaborative partner, guiding decisions and adapting to evolving preferences.
+
+🧪 Review & Sanity Loop
+Before any major change:
+
+Cursor should re-check all relevant .md files for consistency
+
+Simulate the downstream impact of a change on other functions, storage, or components
+
+
+If needed, propose a “plan adjustment” and await user input

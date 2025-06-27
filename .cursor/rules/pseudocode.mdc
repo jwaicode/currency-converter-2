@@ -1,0 +1,62 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+addCurrency(isoCode)
+  IF isoCode NOT in storedCurrencyList:
+    Append isoCode to storedCurrencyList
+    Save to AsyncStorage
+    Update selectedCurrencies state
+
+removeCurrency(isoCode)
+  Remove isoCode from storedCurrencyList
+  Save updated list to AsyncStorage
+  Update selectedCurrencies state
+
+convertAllValues(activeIso, activeValue, rates)
+  IF rates[activeIso] == 0 OR NOT EXISTS:
+    RETURN resultMap where all values = null
+  activeToUSD = activeValue / rates[activeIso]
+  resultMap = {}
+  FOR iso IN selectedCurrencies:
+    IF iso != activeIso:
+      IF rates[iso] exists:
+        resultMap[iso] = round(activeToUSD * rates[iso], 2)
+      ELSE:
+        resultMap[iso] = null
+    ELSE:
+      resultMap[iso] = activeValue
+  RETURN resultMap
+
+useExchangeRates()
+  ON mount:
+    GET savedRates + lastUpdated from AsyncStorage
+    IF no rates OR lastUpdated > 24h:
+      TRY fetch newRates from API
+        IF success:
+          Save newRates + timestamp
+          RETURN { rates: newRates, isStale: false }
+        ELSE IF savedRates:
+          Log error
+          RETURN { rates: savedRates, isStale: true }
+        ELSE:
+          RETURN { rates: {}, isStale: true }
+    ELSE:
+      RETURN { rates: savedRates, isStale: false }
+
+filterCurrencies(query)
+  queryLower = query.toLowerCase()
+  RETURN currencies WHERE
+    isoCode OR name OR aliases CONTAIN queryLower
+
+validateNumericInput(input)
+  IF input contains invalid characters:
+    RETURN false
+  IF length > 12:
+    RETURN false
+  IF parses to float:
+    RETURN true
+  ELSE:
+    RETURN false
+
