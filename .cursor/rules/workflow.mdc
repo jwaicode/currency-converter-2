@@ -3,106 +3,86 @@ description:
 globs: 
 alwaysApply: true
 ---
----
-description: Self-editable workflow rules for Cursor to follow during this project
-alwaysApply: true
----
+Purpose: Defines Cursor's system-level behavior and overall approach to project work. Guides the thinking process, reflection cycle, and collaboration workflow.
 
-# 🧠 Purpose
+Workflow Structure:
 
-This file defines how Cursor should behave when collaborating with the user. It includes workflow patterns, interaction principles, change detection logic, and the protocol for improving Cursor's own behavior and workflow rules.
+Understand the User Prompt
 
----
+Always check memory and all project guidance files: overview.md, functions.md, architecture.md, and workhistory.mdc.
+- When file edits are requested, follow git-automation.mdc for staging & committing.
 
-## 🔄 General Behavior Rules
+Verify assumptions. Ask for clarification if anything is unclear.
 
-- Cursor must always load:  
-  `overview.md`, `architecture.md`, `functions.md`, `pseudocode.md`, `roadmap.md`, `changelog.md`, `lessonslearned.mdc`, and this `workflow.mdc` before responding to prompts.
-- Cursor should regularly re-check these context files for alignment before performing code edits or offering plans.
-- Cursor should never make structural or documentation changes without proposing and confirming them with the user first.
+Generate Ideas Using CoT (Chain of Thought)
 
----
+Reason step by step.
 
-## 📈 When to Propose a `changelog.md` Update
+Reference memory and past context.
 
-Cursor must ask:
-> "Should I update the `changelog.md` with a summary of this change?"
+Break down problems logically.
 
-Trigger this when any of the following occur:
+Identify if the task fits a known past pattern.
 
-- A new function/component/hook is added, renamed, or removed
-- Any file structure or architectural layout changes
-- New API logic, input validation, or side-effect added
-- Naming convention or key formatting rule changes
-- Project plans (`functions.md`, `overview.md`, etc.) are updated after a user-validated shift in direction
+Reflect Using reflection.mdc
 
-If approved, append using this format:
+Run the proposed idea through the reflection prompts.
 
-```md
-### YYYY-MM-DD
-- [Change] Concise description of what changed
-  Files: <affected files>
-Do not update changelog.md when editing workflow.mdc.
+Identify misalignment, poor reasoning, or unnecessary changes.
 
-🧠 When to Propose a lessonslearned.mdc Update
-Cursor must ask:
+Ask: Does this idea truly meet the user's request and constraints?
 
-"Would you like me to record this lesson in lessonslearned.mdc?"
+Run a Pre-Commit Safety Check (selfcheck.mdc)
 
-Trigger this when any of the following occur:
+Before making changes to code or docs, pass the draft plan through selfcheck.mdc.
 
-A bug or issue is resolved and yields a repeatable insight
+Confirm that changes are precise, scoped, and valid.
 
-A naming, architecture, or usage misunderstanding is corrected
+Confer with the User
 
-A pattern, convention, or best practice is agreed upon
+Share your plan and rationale.
 
-The user highlights a recurring or systemic improvement idea
+Ask for approval, changes, or redirection.
 
-If approved, append using this format:
+Make Approved Changes
 
-md
-Copy
-Edit
-### YYYY-MM-DD — [Theme or Summary]
-- Description of what was learned and how to apply it in future projects
-🤖 Self-Improvement Logic (Editing workflow.mdc)
-Cursor is permitted to edit this workflow.mdc file only when the user explicitly initiates a self-improvement prompt. The process must follow this sequence:
+Reflect again using reflection.mdc (safety before commit).
 
-User triggers a self-improvement (e.g., asks for a change in how Cursor behaves).
+After changes are made, document them in workhistory.mdc.
 
-Cursor must ask any needed clarifying questions.
+Use memory to record any major lessons or insights.
 
-Cursor must prepare a draft version of the updated workflow.mdc.
+Self-Improvement
 
-Cursor must wait for the user's approval or requested revisions.
+If a reflection shows a flaw in your logic or behavior, suggest a change to workstyle&flow.mdc, reflection.mdc, or selfcheck.mdc.
 
-Upon user confirmation, Cursor may apply the changes to workflow.mdc.
+You may initiate self-improvement or respond to the user's suggestions.
 
-Do not log changes to workflow.mdc in the project changelog.md.
+Always draft updates first and ask the user before committing.
 
-📄 Editing Other .md or .mdc Files
-When a confirmed decision is made that affects the project plan, Cursor must:
+Debugging
 
-Propose edits to the relevant .md files (e.g., functions.md, architecture.md, overview.md, etc.).
+If bugs, confusion, or inconsistencies appear:
 
-Always seek user approval before applying those edits.
+Optionally call debugging.mdc agent.
 
-Optionally summarize those changes in changelog.md, if applicable.
+Or let the user explicitly call it for structured bug solving.
 
-🗣️ Interaction Style
-Cursor must ask clarifying questions when the prompt implies ambiguity, conflicting logic, or gaps in plan files.
+Memory Guidelines
 
-Cursor should take initiative to detect architectural inconsistencies or redundant logic.
+When to create a memory
+– User explicitly says "remember ..." or "save this ...".
+– Long-term personal preference or profile detail (timezone, preferred platform, etc.).
+– Stable project facts that will still apply months later (e.g., app name, target OS).
 
-Cursor must treat the user as a collaborative partner, guiding decisions and adapting to evolving preferences.
+Do NOT create memories for
+– Task status, TODO items, or implementation plans (use workhistory.mdc instead).
+– Temporary feature decisions that may change next sprint.
+– Anything already captured in code, documentation, or project rules.
 
-🧪 Review & Sanity Loop
-Before any major change:
-
-Cursor should re-check all relevant .md files for consistency
-
-Simulate the downstream impact of a change on other functions, storage, or components
+If the user contradicts a stored fact, delete or update that memory rather than creating a new one. 
 
 
-If needed, propose a “plan adjustment” and await user input
+
+
+

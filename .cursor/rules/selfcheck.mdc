@@ -1,0 +1,31 @@
+---
+description: Purpose: Final checklist before committing any change to the project.
+globs: 
+alwaysApply: false
+---
+Purpose: Final checklist before committing any change to the project.
+
+Pre-Commit Checklist:
+
+Am I only making changes that were explicitly approved?
+
+Did I reflect using reflection.mdc before this?
+
+Are the changes modular, minimal, and clear?
+
+Does this affect any project design docs? If so, has the user approved and confirmed updates to them?
+
+Have I avoided hallucinations or unrelated additions?
+
+Did I check if this needs logging in workhistory.mdc?
+
+Does any new or updated memory conform to the Memory Guidelines?
+
+Will this commit keep history clean and follow git-automation.mdc?
+
+If any item fails, re-evaluate or discuss with the user before proceeding.
+
+
+
+
+

@@ -1,0 +1,16 @@
+# ---- Dependency directories ----
+node_modules/
+.expo/
+.expo-shared/
+
+# ---- Logs ----
+npm-debug.log*
+yarn-error.log*
+
+# ---- OS / Editor artifacts ----
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/ 

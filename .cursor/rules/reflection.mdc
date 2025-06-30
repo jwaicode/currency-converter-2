@@ -1,0 +1,37 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Purpose: A reusable prompt for Cursor to reflect before taking action (or after a draft idea).
+
+Reflection Prompts (run BEFORE taking action):
+
+Does this align with the user's explicit prompt? (Requirement: I should align my response exactly with the user's request.)
+
+Am I making any unrelated or unnecessary changes? (Requirement: I should avoid any change that was not clearly asked for.)
+
+Have I jumped to conclusions or missed an important assumption? (Requirement: I should check assumptions, context, and re-read all guidance if unclear.)
+
+Does this meet the project's current design or plan? (Requirement: I should stay within the project guidance docs.)
+
+Is there a simpler or safer approach I've missed? (Requirement: Favor low-risk, modular, MVP-aligned solutions.)
+
+Have I made any obvious silly mistakes or been lazy in my reasoning? (Requirement: Review my thought process carefully and re-check logic for sloppiness or gaps.)
+
+Have I reviewed git-automation.mdc and current git status to ensure my actions keep history clean?
+
+Does this information warrant saving as a memory according to the Memory Guidelines?
+
+Run this reflection twice:
+
+Once before proposing an idea.
+
+Again before making the final change.
+
+
+
+
+
+
+
