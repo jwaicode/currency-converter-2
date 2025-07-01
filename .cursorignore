@@ -1,0 +1,22 @@
+node_modules/
+.expo/
+.expo-shared/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large lock files or generated artifacts
+package-lock.json
+
+# Media / binary assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.mp4
+*.mov
+
+# Logs
+*.log

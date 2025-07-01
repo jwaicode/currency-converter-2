@@ -1,0 +1,25 @@
+---
+description: Purpose: Used when bugs, strange behavior, or logic issues appear. helpful for debugging.
+globs: 
+alwaysApply: false
+---
+Purpose: Used when bugs, strange behavior, or logic issues appear. Can be user-called or auto-triggered optionally.
+
+Fresh-Eyes Debugging Prompts:
+
+What exactly is the problem? Re-state the issue clearly.
+
+What were the most recent changes that could have caused it?
+
+What assumptions were made that could be wrong?
+
+Are there logic errors, uninitialized values, or incorrect inputs?
+
+Are there async/state-related issues?
+
+Have I tried to simulate the issue mentally or via logs? (Optional but can help validate vague problems — not required for all bugs.)
+
+Could this be a tool, environment, or platform mismatch?
+
+
+Reflect deeply before proposing a fix. Only make minimal changes necessary to solve the root issue.

@@ -1,0 +1,23 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Purpose: A clear, running summary of what's been done and decided.
+
+Updates to project structure.
+
+Decisions made with the user.
+
+Fixes, plan changes, or restarts.
+
+Any context that explains current state.
+
+Entries should be clear and timestamped if helpful.
+
+# Entries:
+
+- 2025-06-30: Added explicit Memory Guidelines section to workflow.mdc and updated reflection.mdc and selfcheck.mdc to reference them. (Approved by user)
+
+
+
