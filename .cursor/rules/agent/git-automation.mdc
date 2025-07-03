@@ -10,6 +10,7 @@ description: Guidance for safe automated Git tasks.
 # git-automation.mdc
 
 Purpose
+NOTE: All Git actions must be executed through the GitHub MCP tool suite (`mcp_GitHub_*`). This file defines the branch, commit-message, and safety conventions that those actions must follow.
 Give Cursor explicit, repeatable guidance for everyday Git tasks so that:
 • Common actions (stage, commit, branch, push, PR) are automated safely.
 • Each step is reported back to the user for transparency.
@@ -39,7 +40,7 @@ Give Cursor explicit, repeatable guidance for everyday Git tasks so that:
 ╰───────────────────────────────────────
 
 ╭─ 4. Safety Nets
-│ • Before `reset --hard`, `push --force`, or branch deletions, ask user.
+│ • Cursor MUST NOT perform `reset --hard`, `push --force`, branch deletions, or any other destructive git action. Only additive operations (new commits, new branches) are allowed.
 │ • If tests/linters fail, abort commit & show errors.
 ╰───────────────────────────────────────
 
