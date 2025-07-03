@@ -1,5 +1,57 @@
 ---
-description:
-globs:
+description: 
+globs: 
 alwaysApply: false
 ---
+rule_type: agentRequested
+name: git-automation
+description: Guidance for safe automated Git tasks.
+
+# git-automation.mdc
+
+Purpose
+Give Cursor explicit, repeatable guidance for everyday Git tasks so that:
+• Common actions (stage, commit, branch, push, PR) are automated safely.
+• Each step is reported back to the user for transparency.
+• History remains clean, reviewable, and aligned with best-practice Git workflows.
+
+╭─ 1. Commit Hygiene
+│ • One logical change per commit; ensure the code compiles/tests before committing.
+│ • Use imperative, present-tense summaries, ≤ 50 chars.
+│ • Add a body when it helps answer "why?" or links an Issue/PR.
+│ • Never commit generated artifacts (see .gitignore) or secrets (.env, *.pem).
+│ • On Windows CMD/PowerShell, use **either** interactive `git commit` (opens editor) **or** multiple `-m` flags—one per paragraph—to create summary + body without shell breakage.
+│ • On Windows CMD/PowerShell, create multi-paragraph messages by passing multiple `-m` flags (one per paragraph). Avoid literal newlines inside quoted strings.
+╰───────────────────────────────────────
+
+╭─ 2. Branching Model
+│ • default branch = main
+│ • feature/*  for new features
+│ • fix/*      for bug fixes
+│ • chore/*    for docs, tooling, dev-ops
+│ • Cursor must ask before force-pushing or rewriting public history.
+╰───────────────────────────────────────
+
+╭─ 3. Typical Flows Cursor May Automate
+│ • init-commit:  create initial project skeleton.
+│ • feature-start: create branch, apply user-approved edits, commit.
+│ • feature-finish: push branch, open PR, paste link to user.
+│ • hotfix: patch on main ➝ tag release.
+╰───────────────────────────────────────
+
+╭─ 4. Safety Nets
+│ • Before `reset --hard`, `push --force`, or branch deletions, ask user.
+│ • If tests/linters fail, abort commit & show errors.
+╰───────────────────────────────────────
+
+╭─ 5. Status Reporting
+│ After every Git action, echo:
+│   • branch name + short SHA
+│   • files touched
+│   • next recommended step (e.g., 'run npm test', 'open PR')
+╰───────────────────────────────────────
+
+
+
+
+
