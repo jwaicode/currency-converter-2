@@ -12,4 +12,6 @@ Purpose: Track changes to workflow, reflection, selfcheck, and other agent rules
 # Entries:
 
 - 2025-07-01: Added universal "Version & Compatibility Gate" to `workflow.mdc` and corresponding prompts in `reflection.mdc`. Approved by user.
+- 2025-07-03: Expanded `git-automation.mdc` guidance (commit hygiene, branching model, typical flows, safety nets, status reporting) and clarified Windows multi-paragraph commit messages. Approved by user.
+
 

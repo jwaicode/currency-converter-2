@@ -25,6 +25,9 @@ Entries should be clear and timestamped if helpful.
 
 - 2025-07-01: Upgraded project to Expo SDK 53; updated `package.json` dependencies (expo ^53.0.0, react 19.0.0, react-native 0.79.0, typescript ~5.8.3). Approved by user.
 
+- 2025-07-03: Documented Expo SDK 53 / React 19 / React Native 0.79 versions in `project_context.mdc` and `system_design.mdc`. Approved by user.
+
+
 
 
 
