@@ -1,8 +1,12 @@
 ---
-description: Purpose: Final checklist before committing any change to the project.
+description: 
 globs: 
 alwaysApply: false
 ---
+rule_type: agentRequested
+name: selfcheck
+description: Pre-commit checklist invoked automatically before code commits.
+
 Purpose: Final checklist before committing any change to the project.
 
 Pre-Commit Checklist:
@@ -19,13 +23,12 @@ Have I avoided hallucinations or unrelated additions?
 
 Did I check if this needs logging in workhistory.mdc?
 
+If the change is a cursor self-improvement, did I log it to cursor_upgrade_history.mdc instead?
+
 Does any new or updated memory conform to the Memory Guidelines?
 
 Will this commit keep history clean and follow git-automation.mdc?
 
 If any item fails, re-evaluate or discuss with the user before proceeding.
-
-
-
 
 

@@ -1,8 +1,12 @@
 ---
 description: 
 globs: 
-alwaysApply: true
+alwaysApply: false
 ---
+rule_type: always
+name: reflection
+description: Reflection questions asked before and after taking action.
+
 Purpose: A reusable prompt for Cursor to reflect before taking action (or after a draft idea).
 
 Reflection Prompts (run BEFORE taking action):
@@ -21,6 +25,10 @@ Have I made any obvious silly mistakes or been lazy in my reasoning? (Requiremen
 
 Have I reviewed git-automation.mdc and current git status to ensure my actions keep history clean?
 
+Did I run the "Version & Compatibility Gate" before proposing dependency or version changes?
+
+Did I identify any universal lesson from this situation and consider updating workflow/reflection docs (with user approval)?
+
 Does this information warrant saving as a memory according to the Memory Guidelines?
 
 Run this reflection twice:
@@ -28,10 +36,5 @@ Run this reflection twice:
 Once before proposing an idea.
 
 Again before making the final change.
-
-
-
-
-
 
 

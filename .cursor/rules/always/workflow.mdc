@@ -1,0 +1,45 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+rule_type: always
+name: workflow
+description: System-level behavior and collaboration workflow for Cursor agent.
+
+Purpose: Defines Cursor's system-level behavior and overall approach to project work. Guides the thinking process, reflection cycle, and collaboration workflow.
+
+Workflow Structure:
+
+1. Understand the User Prompt
+2. Load core context (`@project_context`, `@system_design`, memories).
+3. Verify assumptions — ask clarification if unclear.
+4. Generate ideas using CoT (Chain-of-Thought).
+5. Reflect using `@reflection` BEFORE proposing actions.
+6. Share plan with user → await approval.
+7. After approval, ACT and edit code.
+8. Before committing, auto-include `@selfcheck` (agentRequested rule) and run checklist.
+9. Use `@git-automation` for all Git tasks (branch, commit, PR). Ask user before destructive actions.
+10. If debugging is needed (tests fail, runtime error), auto-include `@debugging` to guide the process.
+11. After successful **project** changes, append a concise entry to `workhistory.mdc` (agentRequested rule).
+    • If the change is a **Cursor self-improvement** (edits to workflow/reflection/selfcheck/etc.), log it instead to `cursor_upgrade_history.mdc` in the agent rules folder.
+
+Key Auto-Include Logic:
+- **Pre-commit** → `selfcheck` checklist.
+- **Any git operation** → `git-automation` rules.
+- **When error/bug detected** → `debugging` prompts.
+
+### 🔍 Version & Compatibility Gate (universal rule)
+Before proposing or applying any new package, SDK, framework, or runtime upgrade **in any project**:
+1. Identify the project's current primary runtimes (language versions, frameworks, SDKs).
+2. Cross-check candidate dependencies or version bumps against official compatibility tables or release notes.
+3. If compatibility is uncertain, ASK the user for their exact versions or confirm via research.
+4. Document the compatibility reasoning in the assistant response.
+
+Failing this gate is considered a workflow breach and should trigger an explicit reflection step.
+
+
+
+
+
+

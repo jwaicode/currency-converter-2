@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+rule_type: agentRequested
+name: cursor-upgrade-history
+description: Running log of Cursor self-improvement and rule updates (separate from project workhistory).
+
+Purpose: Track changes to workflow, reflection, selfcheck, and other agent rules so they're not mixed with app-specific history.
+
+# Entries:
+
+- 2025-07-01: Added universal "Version & Compatibility Gate" to `workflow.mdc` and corresponding prompts in `reflection.mdc`. Approved by user.
+

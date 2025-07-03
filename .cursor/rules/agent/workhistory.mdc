@@ -1,0 +1,32 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+rule_type: agentRequested
+name: workhistory
+description: Running log of changes and decisions updated after successful actions.
+
+Purpose: A clear, running summary of what's been done and decided.
+
+Updates to project structure.
+
+Decisions made with the user.
+
+Fixes, plan changes, or restarts.
+
+Any context that explains current state.
+
+Entries should be clear and timestamped if helpful.
+
+# Entries:
+
+- 2025-07-01: Phase 1 scaffolding – created new Expo React-Native workspace `currency-converter-app` with minimal `package.json`, placeholder `App.tsx`, core folder structure, and initial `assets/currencies.json` (30 currencies). Approved by user.
+
+- 2025-07-01: Upgraded project to Expo SDK 53; updated `package.json` dependencies (expo ^53.0.0, react 19.0.0, react-native 0.79.0, typescript ~5.8.3). Approved by user.
+
+
+
+
+
+
