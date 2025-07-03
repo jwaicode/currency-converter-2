@@ -29,7 +29,7 @@ This app is for personal use by the developer, primarily during international tr
 - Warn user if exchange rates are older than 24 h.
 
 ## Technology Stack
-- React Native + Expo Go (iOS testing)  
+- Expo SDK 53 (React 19, React Native 0.79)  
 - AsyncStorage for local persistence  
 - Static JSON file for currency metadata (ISO, names, aliases)  
 - Exchange Freaks API for live exchange rates  
@@ -152,4 +152,8 @@ validateNumericInput(input)
 
 7. 🧩 **Post-MVP Notes**  
     Refactor conversion and persistence logic into a global store (e.g., Zustand or Context) if app complexity increases.
+
+
+
+
 

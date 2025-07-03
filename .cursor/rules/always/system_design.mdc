@@ -10,6 +10,7 @@ description: High-level architecture overview plus core functions and hooks for 
 # Architecture Overview
 
 Project Structure (React Native + Expo)
+Runtime Versions: Expo SDK 53 (React 19, React Native 0.79)
 /currency-converter-app
 ├── /assets
 │   └── currencies.json — Static currency metadata (ISO codes, names, aliases)
@@ -123,5 +124,10 @@ Validates that an input string is numeric:
 - Max length = 12.
 - Does not mutate input.
 - UI layer should separately truncate/sanitize inputs if needed.
+
+
+
+
+
 
 
