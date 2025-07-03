@@ -20,7 +20,6 @@ Give Cursor explicit, repeatable guidance for everyday Git tasks so that:
 │ • Use imperative, present-tense summaries, ≤ 50 chars.
 │ • Add a body when it helps answer "why?" or links an Issue/PR.
 │ • Never commit generated artifacts (see .gitignore) or secrets (.env, *.pem).
-│ • On Windows CMD/PowerShell, use **either** interactive `git commit` (opens editor) **or** multiple `-m` flags—one per paragraph—to create summary + body without shell breakage.
 │ • On Windows CMD/PowerShell, create multi-paragraph messages by passing multiple `-m` flags (one per paragraph). Avoid literal newlines inside quoted strings.
 ╰───────────────────────────────────────
 
