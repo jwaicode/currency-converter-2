@@ -19,14 +19,14 @@ Workflow Structure:
 6. Share plan with user → await approval.
 7. After approval, ACT and edit code.
 8. Before committing, auto-include `@selfcheck` (agentRequested rule) and run checklist.
-9. Use `@git-automation` for all Git tasks (branch, commit, PR). Ask user before destructive actions.
+9. Execute all Git operations (branch, commit, push, PR, merge, review) via the GitHub MCP tool suite (`mcp_GitHub_*`). Follow naming + commit-message conventions in `@git-automation`. Every feature/fix/chore/update must start by creating a dedicated branch following the pattern `type/short-slug`. Cursor **MUST NOT** perform destructive actions such as `push --force`, history rewrites, `reset --hard`, or branch deletions; use only additive, non-destructive operations.
 10. If debugging is needed (tests fail, runtime error), auto-include `@debugging` to guide the process.
 11. After successful **project** changes, append a concise entry to `workhistory.mdc` (agentRequested rule).
     • If the change is a **Cursor self-improvement** (edits to workflow/reflection/selfcheck/etc.), log it instead to `cursor_upgrade_history.mdc` in the agent rules folder.
 
 Key Auto-Include Logic:
 - **Pre-commit** → `selfcheck` checklist.
-- **Any git operation** → `git-automation` rules.
+- **Any Git operation** → GitHub MCP tools (`mcp_GitHub_*`) are used automatically; `git-automation` provides commit/branch conventions.
 - **When error/bug detected** → `debugging` prompts.
 
 ### 🔍 Version & Compatibility Gate (universal rule)
