@@ -1,0 +1,81 @@
+---
+description: helpful simulated uses of the app to help with understanding design requirements
+globs: 
+alwaysApply: false
+---
+rule_type: Agent Requested
+name: simulations
+description: helpful simulated uses of the app to help with understanding design requirements
+
+# Simulated Usage Scenarios – Currency Converter MVP
+
+The following scenarios illustrate typical user interactions with the app.
+Each scenario lists the step-by-step flow and highlights the pertinent data flow between UI, hooks, and storage layers.
+
+---
+
+## 1. Launch & Basic Conversion
+
+1. User opens the app.
+2. `MainScreen` mounts and `useExchangeRates` triggers a fetch request to the remote rates API.
+3. While awaiting the response, the UI shows a loading indicator.
+4. On success, the hook stores rates in context *and* persists them via `storage.ts` (Async Storage).
+5. Default rows display: base currency **USD** and target currency **EUR**.
+6. User taps the amount field in the USD row and types **"100"**.
+7. `useCurrencyConverter` recalculates conversions; the EUR row updates with the equivalent amount.
+
+**Data Flow**: Network → `useExchangeRates` state → Context → `MainScreen` props → `CurrencyRow` render.
+
+---
+
+## 2. Add a New Currency Row
+
+1. User taps **AddCurrencyButton (+)**.
+2. `SearchModal` appears with a searchable list of currencies not already selected.
+3. User types **"JPY"** and selects *Japanese Yen*.
+4. Modal closes; `MainScreen` updates its `rows` array to include JPY.
+5. `useCurrencyConverter` recomputes conversions; the JPY row renders with the converted value.
+
+**Data Flow**: Modal local state → `MainScreen` rows state → `CurrencyRow` → UI.
+
+---
+
+## 3. Change Base Currency
+
+1. User taps the currency code label on the EUR row.
+2. App marks EUR row as the new base and reorders rows (EUR first).
+3. The input amount field switches to the EUR row; previous USD and JPY rows now display converted amounts.
+
+**Data Flow**: User tap → `MainScreen` baseCurrency state → `useCurrencyConverter` → rows rerender.
+
+---
+
+## 4. Offline Launch with Cached Rates
+
+1. Device is offline; user opens the app.
+2. `useExchangeRates` cannot reach the API, so it falls back to cached rates from Async Storage and sets `isStale = true`.
+3. UI shows a banner: **"Rates may be outdated."**
+4. Conversions still work using cached data.
+
+**Data Flow**: Async Storage → `useExchangeRates` state (stale) → Context → UI.
+
+---
+
+## 5. Pull-to-Refresh to Update Rates
+
+1. User performs a pull-to-refresh gesture on the currency list.
+2. `useExchangeRates` attempts to refetch rates.
+3. On success, fresh rates replace cached ones; `isStale` resets to `false`; stale banner disappears.
+
+**Data Flow**: Gesture → Hook refetch → Context update → UI refresh.
+
+---
+
+## 6. Error Handling – Fetch Failure
+
+1. Rates API returns an error (e.g., 500 or timeout).
+2. `useExchangeRates` sets `error` state and retains last known rates if available.
+3. UI displays a snackbar: **"Unable to update rates. Showing last saved data."**
+
+
+**Data Flow**: Network error → Hook `error` state → Snackbar component → User feedback. 

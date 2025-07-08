@@ -1,5 +1,5 @@
 ---
-description: 
+description: description: Guidance for safe automated Git tasks.
 globs: 
 alwaysApply: false
 ---
@@ -20,6 +20,7 @@ Give Cursor explicit, repeatable guidance for everyday Git tasks so that:
 │ • One logical change per commit; ensure the code compiles/tests before committing.
 │ • Use imperative, present-tense summaries, ≤ 50 chars.
 │ • Add a body when it helps answer "why?" or links an Issue/PR.
+│ • Immediately after each commit, automatically push to the same branch on the remote repository.
 │ • Never commit generated artifacts (see .gitignore) or secrets (.env, *.pem).
 │ • On Windows CMD/PowerShell, create multi-paragraph messages by passing multiple `-m` flags (one per paragraph). Avoid literal newlines inside quoted strings.
 ╰───────────────────────────────────────
@@ -49,6 +50,12 @@ Give Cursor explicit, repeatable guidance for everyday Git tasks so that:
 │   • branch name + short SHA
 │   • files touched
 │   • next recommended step (e.g., 'run npm test', 'open PR')
+╰───────────────────────────────────────
+
+╭─ 6. Dual-Repo Syncing Rules
+│ • For **project files**: commit & push to the project repository (`origin`).
+│ • For **thinking-rules files** located in `.cursor/rules/agent/`: in addition to the project commit, push those same files to `jwaicode/cursorrules-repo` on the matching branch (typically `main`).
+│ • Do **not** push project context or workhistory files to the cursorrules-repo.
 ╰───────────────────────────────────────
 
 

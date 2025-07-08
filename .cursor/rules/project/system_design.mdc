@@ -1,9 +1,9 @@
 ---
-description: 
+description: helpful context for understnding the app requirements: High-level architecture overview plus core functions and hooks for the Personal Currency Converter project.
 globs: 
 alwaysApply: false
 ---
-rule_type: always
+rule_type: Agent Requested
 name: system_design
 description: High-level architecture overview plus core functions and hooks for the Personal Currency Converter project.
 

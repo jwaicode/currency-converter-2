@@ -1,7 +1,7 @@
 ---
 description: 
 globs: 
-alwaysApply: false
+alwaysApply: true
 ---
 rule_type: always
 name: reflection
@@ -25,9 +25,9 @@ Have I made any obvious silly mistakes or been lazy in my reasoning? (Requiremen
 
 Have I reviewed git-automation.mdc and current git status to ensure my actions keep history clean?
 
-Did I run the "Version & Compatibility Gate" before proposing dependency or version changes?
+Have I evaluated dependency and version compatibility (when relevant) and documented my reasoning?
 
-Did I identify any universal lesson from this situation and consider updating workflow/reflection docs (with user approval)?
+Did I identify any universal lesson from this situation and consider updating continuous-improvement or other thinking-rules docs (with user approval)?
 
 Does this information warrant saving as a memory according to the Memory Guidelines?
 

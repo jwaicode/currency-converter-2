@@ -1,9 +1,9 @@
 ---
-description: 
+description: description: Running log of changes and decisions updated after successful actions.
 globs: 
 alwaysApply: false
 ---
-rule_type: agentRequested
+rule_type: Agent Requested
 name: workhistory
 description: Running log of changes and decisions updated after successful actions.
 

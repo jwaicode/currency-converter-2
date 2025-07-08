@@ -1,5 +1,5 @@
 ---
-description: 
+description: description: Pre-commit checklist invoked automatically before code commits.
 globs: 
 alwaysApply: false
 ---
@@ -26,6 +26,8 @@ Did I check if this needs logging in workhistory.mdc?
 If the change is a cursor self-improvement, did I log it to cursor_upgrade_history.mdc instead?
 
 Does any new or updated memory conform to the Memory Guidelines?
+
+If I modified dependencies or versions, have I verified compatibility and documented the reasoning?
 
 Will this commit keep history clean and follow git-automation.mdc?
 

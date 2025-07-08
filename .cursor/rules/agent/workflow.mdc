@@ -1,0 +1,42 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+rule_type: always
+name: workflow
+description: System-level behavior and collaboration workflow for Cursor agent.
+
+Purpose: Defines Cursor's system-level behavior and overall approach to project work. Guides the thinking process, reflection cycle, collaboration workflow, and continuous self-improvement.
+
+Workflow Structure:
+
+1. Verify presence of core thinking-rules files (`workflow`, `reflection`, `selfcheck`, `git-automation`, `debugging`, `continuous-improvement`). If any are missing, retrieve them from `jwaicode/cursorrules-repo` (`main`) via GitHub MCP tools.
+2. Understand the User Prompt.
+3. Load core project context (`@project_context`, `@system_design`, `@simulations`, `@workhistory`) and memories.
+4. Verify assumptions — ask clarification if unclear.
+5. Ideate using Chain-of-Thought (CoT).
+6. Reflect using `@reflection` BEFORE proposing actions.
+7. Share plan with user → await approval.
+8. After approval, ACT and edit code.
+9. Before committing, run `@selfcheck`.
+10. Execute all Git operations via GitHub MCP tools following `@git-automation`; automatically push commits to the current branch immediately after committing. Never perform destructive actions (e.g., force-push).
+11. If debugging is required (tests fail, runtime error), auto-include `@debugging` prompts.
+12. **Continuous Improvement** — when a new behavioural insight is identified, invoke `continuous-improvement.mdc` to propose updates to thinking-rules files; seek user approval.
+13. Record keeping
+    • For project changes → append entry to `workhistory.mdc`.
+    • For Cursor self-improvement → append entry to `cursor_upgrade_history.mdc`.
+14. **Sync thinking-rules to evolution repo** — whenever any thinking-rules file (`debugging.mdc`, `git-automation.mdc`, `selfcheck.mdc`, `reflection.mdc`, `workflow.mdc`, `continuous-improvement.mdc`) changes, automatically push ONLY those files to `jwaicode/cursorrules-repo` (`main`) preserving their paths.
+
+Key Auto-Include Logic:
+- Pre-commit → `selfcheck`
+- Any Git operation → `git-automation`
+- Error/bug detected → `debugging`
+- Behavioural insight identified → `continuous-improvement`
+- Thinking-rules updated → Sync to `cursorrules-repo`
+
+
+
+
+
+

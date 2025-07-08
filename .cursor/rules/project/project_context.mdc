@@ -1,12 +1,11 @@
 ---
-description: 
+description: helpful for understanding the app requirements: Project purpose, MVP scope, constraints, pseudocode, and roadmap for the Personal Currency Converter.
 globs: 
 alwaysApply: false
 ---
-rule_type: always
+rule_type: Agent Requested
 name: project_context
-description: Project purpose, MVP scope, constraints, pseudocode, and roadmap for the Personal Currency Converter.
-
+helpful for understanding the app requirements: Project purpose, MVP scope, constraints, pseudocode, and roadmap for the Personal Currency Converter.
 # App Overview
 
 App Name: Personal Currency Converter
