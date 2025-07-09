@@ -52,7 +52,15 @@ Give Cursor explicit, repeatable guidance for everyday Git tasks so that:
 │   • next recommended step (e.g., 'run npm test', 'open PR')
 ╰───────────────────────────────────────
 
-╭─ 6. Dual-Repo Syncing Rules
+╭─ 6. .gitkeep File Usage and Removal Rules
+│ • .gitkeep files should ONLY be used temporarily during initial project scaffolding to preserve empty directory structure.
+│ • Once directories contain actual content files, .gitkeep files MUST be removed immediately.
+│ • Never commit .gitkeep files in directories that already have meaningful content.
+│ • When cleaning up repositories, proactively search for and remove unnecessary .gitkeep files.
+│ • If a directory becomes empty again, consider whether it's still needed before adding .gitkeep back.
+╰───────────────────────────────────────
+
+╭─ 7. Dual-Repo Syncing Rules
 │ • For **project files**: commit & push to the project repository (`origin`).
 │ • For **thinking-rules files** located in `.cursor/rules/agent/`: in addition to the project commit, push those same files to `jwaicode/cursorrules-repo` on the matching branch (typically `main`).
 │ • Do **not** push project context or workhistory files to the cursorrules-repo.
