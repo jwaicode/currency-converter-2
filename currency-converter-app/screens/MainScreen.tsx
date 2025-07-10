@@ -5,7 +5,6 @@ import {
   FlatList,
   StyleSheet,
   SafeAreaView,
-  TouchableWithoutFeedback,
   Keyboard,
   Alert,
 } from 'react-native';
@@ -46,7 +45,19 @@ export function MainScreen() {
   };
 
   const handleRowFocus = (iso: string) => {
-    setActiveInput(iso, activeValue);
+    // Determine the value that is currently displayed for the tapped row. If the
+    // row was already active, keep its activeValue. Otherwise, use the last
+    // converted value that had been calculated for that currency (or empty
+    // string if none). This prevents the newly-focused row from inheriting the
+    // previously active row’s amount.
+    const newValue =
+      iso === activeIso
+        ? activeValue
+        : convertedValues[iso] !== undefined && convertedValues[iso] !== null
+          ? convertedValues[iso].toString()
+          : '';
+
+    setActiveInput(iso, newValue);
   };
 
   const handleRowValueChange = (iso: string, value: string) => {
@@ -96,19 +107,19 @@ export function MainScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableWithoutFeedback onPress={dismissKeyboard}>
-        <View style={styles.content}>
-          <FlatList
-            data={selectedCurrencies}
-            renderItem={renderCurrencyRow}
-            keyExtractor={(item) => item}
-            ListHeaderComponent={renderHeader}
-            ListFooterComponent={renderFooter}
-            showsVerticalScrollIndicator={false}
-            keyboardShouldPersistTaps="handled"
-          />
-        </View>
-      </TouchableWithoutFeedback>
+      <View style={styles.content}>
+        <FlatList
+          data={selectedCurrencies}
+          renderItem={renderCurrencyRow}
+          keyExtractor={(item) => item}
+          ListHeaderComponent={renderHeader}
+          ListFooterComponent={renderFooter}
+          showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled"
+          keyboardDismissMode="on-drag"
+          onScrollBeginDrag={dismissKeyboard}
+        />
+      </View>
 
       <SearchModal
         visible={isModalVisible}

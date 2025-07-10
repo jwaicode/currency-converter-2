@@ -26,20 +26,6 @@
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
-    },
-    "plugins": [
-      [
-        "expo-manifests",
-        {
-          "name": "Personal Currency Converter",
-          "short_name": "CurrencyConv",
-          "description": "Quick currency conversion for travelers",
-          "start_url": "/",
-          "display": "standalone",
-          "theme_color": "#000000",
-          "background_color": "#ffffff"
-        }
-      ]
-    ]
+    }
   }
 }
