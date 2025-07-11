@@ -4,6 +4,7 @@
     "slug": "currency-converter-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/calc-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -18,21 +19,8 @@
     },
     "android": {},
     "web": {
-      "bundler": "metro"
-    },
-    "plugins": [
-      [
-        "expo-manifests",
-        {
-          "name": "Personal Currency Converter",
-          "short_name": "CurrencyConv",
-          "description": "Quick currency conversion for travelers",
-          "start_url": "/",
-          "display": "standalone",
-          "theme_color": "#000000",
-          "background_color": "#ffffff"
-        }
-      ]
-    ]
+      "bundler": "metro",
+      "favicon": "./assets/calc-icon.png"
+    }
   }
 }
