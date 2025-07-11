@@ -4,7 +4,6 @@
     "slug": "currency-converter-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -17,15 +16,23 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
-    },
+    "android": {},
     "web": {
-      "favicon": "./assets/favicon.png",
       "bundler": "metro"
-    }
+    },
+    "plugins": [
+      [
+        "expo-manifests",
+        {
+          "name": "Personal Currency Converter",
+          "short_name": "CurrencyConv",
+          "description": "Quick currency conversion for travelers",
+          "start_url": "/",
+          "display": "standalone",
+          "theme_color": "#000000",
+          "background_color": "#ffffff"
+        }
+      ]
+    ]
   }
 }
