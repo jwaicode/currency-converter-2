@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Personal Currency Converter",
+    "slug": "currency-converter-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/calc-icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {},
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/calc-icon.png"
+    },
+    "experiments": {
+      "baseUrl": "/currency-converter-2/"
+    }
+  }
+}

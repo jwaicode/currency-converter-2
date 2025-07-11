@@ -13,4 +13,8 @@ Thumbs.db
 
 # IDE settings
 .vscode/
-.idea/ 
+.idea/
+
+# Expo
+/currency-converter-app/dist-web/
+web-build/

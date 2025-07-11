@@ -33,6 +33,13 @@ export function CurrencyRow({
 
   const displayValue = isActive ? value : (convertedValue?.toFixed(2) || '');
 
+  // Always place the caret at the end of the text when this row is active so
+  // that a user can immediately back-space the existing value. When the row is
+  // inactive we don’t provide an explicit selection.
+  const caretSelection = isActive
+    ? { start: displayValue.length, end: displayValue.length }
+    : undefined;
+
   return (
     <View style={styles.container}>
       <View style={styles.leftSection}>
@@ -49,7 +56,9 @@ export function CurrencyRow({
           keyboardType="numeric"
           placeholder="0.00"
           editable={true}
-          selectTextOnFocus={true}
+          // Let the cursor appear at the end of the input to facilitate easy back-spacing.
+          selectTextOnFocus={false}
+          selection={caretSelection as any}
         />
         
         <TouchableOpacity

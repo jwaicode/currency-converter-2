@@ -25,12 +25,20 @@ export function useCurrencyConverter(rates: Record<string, number>): UseCurrency
 
   // Recalculate conversions when active value, active ISO, or rates change
   useEffect(() => {
+    // Recalculate only when we have an active currency *and* a numeric value.
+    // If the active currency is cleared (e.g. the row was deleted), we keep the
+    // previous converted values so that the list still shows meaningful numbers
+    // instead of resetting everything to zero/blank.
     if (activeIso && activeValue && rates) {
-      const newConvertedValues = convertAllValues(activeIso, parseFloat(activeValue) || 0, rates);
+      const newConvertedValues = convertAllValues(
+        activeIso,
+        parseFloat(activeValue) || 0,
+        rates
+      );
       setConvertedValues(newConvertedValues);
-    } else {
-      setConvertedValues({});
     }
+    // Intentionally no `else { setConvertedValues({}) }` here so that values
+    // persist when there is no active currency.
   }, [activeIso, activeValue, rates, selectedCurrencies]);
 
   const loadSelectedCurrencies = async () => {
