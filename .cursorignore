@@ -10,7 +10,6 @@ Thumbs.db
 package-lock.json
 
 # Media / binary assets
-*.png
 *.jpg
 *.jpeg
 *.gif

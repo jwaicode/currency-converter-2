@@ -21,6 +21,9 @@
     "web": {
       "bundler": "metro",
       "favicon": "./assets/calc-icon.png"
+    },
+    "experiments": {
+      "baseUrl": "."
     }
   }
 }
