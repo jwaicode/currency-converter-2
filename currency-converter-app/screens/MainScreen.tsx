@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   Keyboard,
   Alert,
+  Platform,
 } from 'react-native';
 import { colors } from '../utils/colors';
 import { CurrencyRow } from '../components/CurrencyRow';
@@ -35,6 +36,15 @@ export function MainScreen() {
   };
 
   const handleRemoveCurrency = (iso: string) => {
+    // On web, the React Native Alert API does not present native dialog
+    // buttons in the same way as on mobile platforms. To ensure the remove
+    // action is always executed, bypass the Alert on web and remove the
+    // currency immediately.
+    if (Platform.OS === 'web') {
+      removeCurrency(iso);
+      return;
+    }
+
     Alert.alert(
       'Remove Currency',
       `Remove ${iso} from your list?`,

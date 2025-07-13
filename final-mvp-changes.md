@@ -3,11 +3,7 @@ pwa currency converter mvp finish:
 
 To Do:
 
-- dark theme. just change the colours so its dark, i dont need a toggle between light and dark. 
-
-- currency modal tap away feature. the modal autofocusses on the searchbar, so the keyboard is therefore up and there is part of the curriencies list showing behind the keyboard betweeen the keyboard (bottom) and the searchbar (top); i want to tap anywhere other than the keyboard or search bar and have the search defocus therefore shriking the keyboard back; then the next touch can do anything like scroll the list or just tap a currency. at the moment, the sarch is focussed with the keyboard and tapping away actually selects a currency from the list behind. 
-
-- delete button for each row doesnt do anything. lets diagnose and solve. 
+- ~~delete button for each row didnt work – fixed by bypassing the web Alert and directly removing the currency~~
 
 - **also extend currencies.json to all currencies!**
 
@@ -16,7 +12,11 @@ To Do:
 
 Completely done:
 
+- Delete button now properly removes the selected row on web and native platforms.
+
 - make caching for offline (!or however id be able to have the app open always if offline, like a native app would - local storage?)
+
+- dark theme. just change the colours so its dark, i dont need a toggle between light and dark. 
 
 
 
