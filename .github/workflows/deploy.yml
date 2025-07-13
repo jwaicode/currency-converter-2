@@ -8,11 +8,10 @@ on:
 
 jobs:
   build:
-    # Run only when CI succeeded on main
+    # Run on manual dispatch or any successful CI run
     if: |
       github.event_name == 'workflow_dispatch' ||
-      (github.event.workflow_run.conclusion == 'success' &&
-       github.event.workflow_run.head_branch == 'feature/offline-cache')
+      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     concurrency:
       group: 'pages'
