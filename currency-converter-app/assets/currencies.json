@@ -1,32 +1,1192 @@
 [
-  { "iso": "USD", "name": "US Dollar", "aliases": ["usd", "us", "dollar", "us dollar", "american"] },
-  { "iso": "EUR", "name": "Euro", "aliases": ["eur", "euro"] },
-  { "iso": "GBP", "name": "British Pound", "aliases": ["gbp", "pound", "sterling", "british"] },
-  { "iso": "JPY", "name": "Japanese Yen", "aliases": ["jpy", "yen", "japanese"] },
-  { "iso": "CHF", "name": "Swiss Franc", "aliases": ["chf", "franc", "swiss"] },
-  { "iso": "CAD", "name": "Canadian Dollar", "aliases": ["cad", "canadian", "dollar", "canadian dollar"] },
-  { "iso": "AUD", "name": "Australian Dollar", "aliases": ["aud", "australian", "dollar", "australian dollar"] },
-  { "iso": "NZD", "name": "New Zealand Dollar", "aliases": ["nzd", "new zealand", "dollar", "kiwi"] },
-  { "iso": "CNY", "name": "Chinese Yuan", "aliases": ["cny", "yuan", "renminbi", "chinese"] },
-  { "iso": "HKD", "name": "Hong Kong Dollar", "aliases": ["hkd", "hong kong", "dollar"] },
-  { "iso": "SGD", "name": "Singapore Dollar", "aliases": ["sgd", "singapore", "dollar"] },
-  { "iso": "INR", "name": "Indian Rupee", "aliases": ["inr", "rupee", "indian"] },
-  { "iso": "BRL", "name": "Brazilian Real", "aliases": ["brl", "real", "brazilian"] },
-  { "iso": "ZAR", "name": "South African Rand", "aliases": ["zar", "rand", "south african"] },
-  { "iso": "SEK", "name": "Swedish Krona", "aliases": ["sek", "krona", "swedish"] },
-  { "iso": "NOK", "name": "Norwegian Krone", "aliases": ["nok", "krone", "norwegian"] },
-  { "iso": "DKK", "name": "Danish Krone", "aliases": ["dkk", "krone", "danish"] },
-  { "iso": "THB", "name": "Thai Baht", "aliases": ["thb", "baht", "thai"] },
-  { "iso": "MXN", "name": "Mexican Peso", "aliases": ["mxn", "peso", "mexican"] },
-  { "iso": "ARS", "name": "Argentine Peso", "aliases": ["ars", "peso", "argentine"] },
-  { "iso": "PHP", "name": "Philippine Peso", "aliases": ["php", "peso", "philippine"] },
-  { "iso": "KRW", "name": "South Korean Won", "aliases": ["krw", "won", "korean"] },
-  { "iso": "IDR", "name": "Indonesian Rupiah", "aliases": ["idr", "rupiah", "indonesian"] },
-  { "iso": "MYR", "name": "Malaysian Ringgit", "aliases": ["myr", "ringgit", "malaysian"] },
-  { "iso": "PLN", "name": "Polish Zloty", "aliases": ["pln", "zloty", "polish"] },
-  { "iso": "TRY", "name": "Turkish Lira", "aliases": ["try", "lira", "turkish"] },
-  { "iso": "RUB", "name": "Russian Ruble", "aliases": ["rub", "ruble", "russian"] },
-  { "iso": "AED", "name": "UAE Dirham", "aliases": ["aed", "dirham", "emirati"] },
-  { "iso": "SAR", "name": "Saudi Riyal", "aliases": ["sar", "riyal", "saudi"] },
-  { "iso": "BTC", "name": "Bitcoin", "aliases": ["btc", "bitcoin", "crypto"] }
-] 
+  {
+    "iso": "AED",
+    "name": "United Arab Emirates Dirham",
+    "aliases": [
+      "aed"
+    ]
+  },
+  {
+    "iso": "AFN",
+    "name": "Afghan Afghani",
+    "aliases": [
+      "afn"
+    ]
+  },
+  {
+    "iso": "ALL",
+    "name": "Albanian Lek",
+    "aliases": [
+      "all"
+    ]
+  },
+  {
+    "iso": "AMD",
+    "name": "Armenian Dram",
+    "aliases": [
+      "amd"
+    ]
+  },
+  {
+    "iso": "ANG",
+    "name": "Netherlands Antillean Guilder",
+    "aliases": [
+      "ang"
+    ]
+  },
+  {
+    "iso": "AOA",
+    "name": "Angolan Kwanza",
+    "aliases": [
+      "aoa"
+    ]
+  },
+  {
+    "iso": "ARS",
+    "name": "Argentine Peso",
+    "aliases": [
+      "ars"
+    ]
+  },
+  {
+    "iso": "AUD",
+    "name": "Australian Dollar",
+    "aliases": [
+      "aud"
+    ]
+  },
+  {
+    "iso": "AWG",
+    "name": "Aruban Florin",
+    "aliases": [
+      "awg"
+    ]
+  },
+  {
+    "iso": "AZN",
+    "name": "Azerbaijani Manat",
+    "aliases": [
+      "azn"
+    ]
+  },
+  {
+    "iso": "BAM",
+    "name": "Bosnia-Herzegovina Convertible Mark",
+    "aliases": [
+      "bam"
+    ]
+  },
+  {
+    "iso": "BBD",
+    "name": "Barbadian Dollar",
+    "aliases": [
+      "bbd"
+    ]
+  },
+  {
+    "iso": "BDT",
+    "name": "Bangladeshi Taka",
+    "aliases": [
+      "bdt"
+    ]
+  },
+  {
+    "iso": "BGN",
+    "name": "Bulgarian Lev",
+    "aliases": [
+      "bgn"
+    ]
+  },
+  {
+    "iso": "BHD",
+    "name": "Bahraini Dinar",
+    "aliases": [
+      "bhd"
+    ]
+  },
+  {
+    "iso": "BIF",
+    "name": "Burundian Franc",
+    "aliases": [
+      "bif"
+    ]
+  },
+  {
+    "iso": "BMD",
+    "name": "Bermudan Dollar",
+    "aliases": [
+      "bmd"
+    ]
+  },
+  {
+    "iso": "BND",
+    "name": "Brunei Dollar",
+    "aliases": [
+      "bnd"
+    ]
+  },
+  {
+    "iso": "BOB",
+    "name": "Bolivian Boliviano",
+    "aliases": [
+      "bob"
+    ]
+  },
+  {
+    "iso": "BRL",
+    "name": "Brazilian Real",
+    "aliases": [
+      "brl"
+    ]
+  },
+  {
+    "iso": "BSD",
+    "name": "Bahamian Dollar",
+    "aliases": [
+      "bsd"
+    ]
+  },
+  {
+    "iso": "BTC",
+    "name": "Bitcoin",
+    "aliases": [
+      "btc"
+    ]
+  },
+  {
+    "iso": "BTN",
+    "name": "Bhutanese Ngultrum",
+    "aliases": [
+      "btn"
+    ]
+  },
+  {
+    "iso": "BWP",
+    "name": "Botswanan Pula",
+    "aliases": [
+      "bwp"
+    ]
+  },
+  {
+    "iso": "BYN",
+    "name": "Belarusian Ruble",
+    "aliases": [
+      "byn"
+    ]
+  },
+  {
+    "iso": "BZD",
+    "name": "Belize Dollar",
+    "aliases": [
+      "bzd"
+    ]
+  },
+  {
+    "iso": "CAD",
+    "name": "Canadian Dollar",
+    "aliases": [
+      "cad"
+    ]
+  },
+  {
+    "iso": "CDF",
+    "name": "Congolese Franc",
+    "aliases": [
+      "cdf"
+    ]
+  },
+  {
+    "iso": "CHF",
+    "name": "Swiss Franc",
+    "aliases": [
+      "chf"
+    ]
+  },
+  {
+    "iso": "CLF",
+    "name": "Chilean Unit of Account (UF)",
+    "aliases": [
+      "clf"
+    ]
+  },
+  {
+    "iso": "CLP",
+    "name": "Chilean Peso",
+    "aliases": [
+      "clp"
+    ]
+  },
+  {
+    "iso": "CNH",
+    "name": "Chinese Yuan (Offshore)",
+    "aliases": [
+      "cnh"
+    ]
+  },
+  {
+    "iso": "CNY",
+    "name": "Chinese Yuan",
+    "aliases": [
+      "cny"
+    ]
+  },
+  {
+    "iso": "COP",
+    "name": "Colombian Peso",
+    "aliases": [
+      "cop"
+    ]
+  },
+  {
+    "iso": "CRC",
+    "name": "Costa Rican Colón",
+    "aliases": [
+      "crc"
+    ]
+  },
+  {
+    "iso": "CUC",
+    "name": "Cuban Convertible Peso",
+    "aliases": [
+      "cuc"
+    ]
+  },
+  {
+    "iso": "CUP",
+    "name": "Cuban Peso",
+    "aliases": [
+      "cup"
+    ]
+  },
+  {
+    "iso": "CVE",
+    "name": "Cape Verdean Escudo",
+    "aliases": [
+      "cve"
+    ]
+  },
+  {
+    "iso": "CZK",
+    "name": "Czech Republic Koruna",
+    "aliases": [
+      "czk"
+    ]
+  },
+  {
+    "iso": "DJF",
+    "name": "Djiboutian Franc",
+    "aliases": [
+      "djf"
+    ]
+  },
+  {
+    "iso": "DKK",
+    "name": "Danish Krone",
+    "aliases": [
+      "dkk"
+    ]
+  },
+  {
+    "iso": "DOP",
+    "name": "Dominican Peso",
+    "aliases": [
+      "dop"
+    ]
+  },
+  {
+    "iso": "DZD",
+    "name": "Algerian Dinar",
+    "aliases": [
+      "dzd"
+    ]
+  },
+  {
+    "iso": "EGP",
+    "name": "Egyptian Pound",
+    "aliases": [
+      "egp"
+    ]
+  },
+  {
+    "iso": "ERN",
+    "name": "Eritrean Nakfa",
+    "aliases": [
+      "ern"
+    ]
+  },
+  {
+    "iso": "ETB",
+    "name": "Ethiopian Birr",
+    "aliases": [
+      "etb"
+    ]
+  },
+  {
+    "iso": "EUR",
+    "name": "Euro",
+    "aliases": [
+      "eur"
+    ]
+  },
+  {
+    "iso": "FJD",
+    "name": "Fijian Dollar",
+    "aliases": [
+      "fjd"
+    ]
+  },
+  {
+    "iso": "FKP",
+    "name": "Falkland Islands Pound",
+    "aliases": [
+      "fkp"
+    ]
+  },
+  {
+    "iso": "GBP",
+    "name": "British Pound Sterling",
+    "aliases": [
+      "gbp"
+    ]
+  },
+  {
+    "iso": "GEL",
+    "name": "Georgian Lari",
+    "aliases": [
+      "gel"
+    ]
+  },
+  {
+    "iso": "GGP",
+    "name": "Guernsey Pound",
+    "aliases": [
+      "ggp"
+    ]
+  },
+  {
+    "iso": "GHS",
+    "name": "Ghanaian Cedi",
+    "aliases": [
+      "ghs"
+    ]
+  },
+  {
+    "iso": "GIP",
+    "name": "Gibraltar Pound",
+    "aliases": [
+      "gip"
+    ]
+  },
+  {
+    "iso": "GMD",
+    "name": "Gambian Dalasi",
+    "aliases": [
+      "gmd"
+    ]
+  },
+  {
+    "iso": "GNF",
+    "name": "Guinean Franc",
+    "aliases": [
+      "gnf"
+    ]
+  },
+  {
+    "iso": "GTQ",
+    "name": "Guatemalan Quetzal",
+    "aliases": [
+      "gtq"
+    ]
+  },
+  {
+    "iso": "GYD",
+    "name": "Guyanaese Dollar",
+    "aliases": [
+      "gyd"
+    ]
+  },
+  {
+    "iso": "HKD",
+    "name": "Hong Kong Dollar",
+    "aliases": [
+      "hkd"
+    ]
+  },
+  {
+    "iso": "HNL",
+    "name": "Honduran Lempira",
+    "aliases": [
+      "hnl"
+    ]
+  },
+  {
+    "iso": "HRK",
+    "name": "Croatian Kuna",
+    "aliases": [
+      "hrk"
+    ]
+  },
+  {
+    "iso": "HTG",
+    "name": "Haitian Gourde",
+    "aliases": [
+      "htg"
+    ]
+  },
+  {
+    "iso": "HUF",
+    "name": "Hungarian Forint",
+    "aliases": [
+      "huf"
+    ]
+  },
+  {
+    "iso": "IDR",
+    "name": "Indonesian Rupiah",
+    "aliases": [
+      "idr"
+    ]
+  },
+  {
+    "iso": "ILS",
+    "name": "Israeli New Sheqel",
+    "aliases": [
+      "ils"
+    ]
+  },
+  {
+    "iso": "IMP",
+    "name": "Manx pound",
+    "aliases": [
+      "imp"
+    ]
+  },
+  {
+    "iso": "INR",
+    "name": "Indian Rupee",
+    "aliases": [
+      "inr"
+    ]
+  },
+  {
+    "iso": "IQD",
+    "name": "Iraqi Dinar",
+    "aliases": [
+      "iqd"
+    ]
+  },
+  {
+    "iso": "IRR",
+    "name": "Iranian Rial",
+    "aliases": [
+      "irr"
+    ]
+  },
+  {
+    "iso": "ISK",
+    "name": "Icelandic Króna",
+    "aliases": [
+      "isk"
+    ]
+  },
+  {
+    "iso": "JEP",
+    "name": "Jersey Pound",
+    "aliases": [
+      "jep"
+    ]
+  },
+  {
+    "iso": "JMD",
+    "name": "Jamaican Dollar",
+    "aliases": [
+      "jmd"
+    ]
+  },
+  {
+    "iso": "JOD",
+    "name": "Jordanian Dinar",
+    "aliases": [
+      "jod"
+    ]
+  },
+  {
+    "iso": "JPY",
+    "name": "Japanese Yen",
+    "aliases": [
+      "jpy"
+    ]
+  },
+  {
+    "iso": "KES",
+    "name": "Kenyan Shilling",
+    "aliases": [
+      "kes"
+    ]
+  },
+  {
+    "iso": "KGS",
+    "name": "Kyrgystani Som",
+    "aliases": [
+      "kgs"
+    ]
+  },
+  {
+    "iso": "KHR",
+    "name": "Cambodian Riel",
+    "aliases": [
+      "khr"
+    ]
+  },
+  {
+    "iso": "KMF",
+    "name": "Comorian Franc",
+    "aliases": [
+      "kmf"
+    ]
+  },
+  {
+    "iso": "KPW",
+    "name": "North Korean Won",
+    "aliases": [
+      "kpw"
+    ]
+  },
+  {
+    "iso": "KRW",
+    "name": "South Korean Won",
+    "aliases": [
+      "krw"
+    ]
+  },
+  {
+    "iso": "KWD",
+    "name": "Kuwaiti Dinar",
+    "aliases": [
+      "kwd"
+    ]
+  },
+  {
+    "iso": "KYD",
+    "name": "Cayman Islands Dollar",
+    "aliases": [
+      "kyd"
+    ]
+  },
+  {
+    "iso": "KZT",
+    "name": "Kazakhstani Tenge",
+    "aliases": [
+      "kzt"
+    ]
+  },
+  {
+    "iso": "LAK",
+    "name": "Laotian Kip",
+    "aliases": [
+      "lak"
+    ]
+  },
+  {
+    "iso": "LBP",
+    "name": "Lebanese Pound",
+    "aliases": [
+      "lbp"
+    ]
+  },
+  {
+    "iso": "LKR",
+    "name": "Sri Lankan Rupee",
+    "aliases": [
+      "lkr"
+    ]
+  },
+  {
+    "iso": "LRD",
+    "name": "Liberian Dollar",
+    "aliases": [
+      "lrd"
+    ]
+  },
+  {
+    "iso": "LSL",
+    "name": "Lesotho Loti",
+    "aliases": [
+      "lsl"
+    ]
+  },
+  {
+    "iso": "LYD",
+    "name": "Libyan Dinar",
+    "aliases": [
+      "lyd"
+    ]
+  },
+  {
+    "iso": "MAD",
+    "name": "Moroccan Dirham",
+    "aliases": [
+      "mad"
+    ]
+  },
+  {
+    "iso": "MDL",
+    "name": "Moldovan Leu",
+    "aliases": [
+      "mdl"
+    ]
+  },
+  {
+    "iso": "MGA",
+    "name": "Malagasy Ariary",
+    "aliases": [
+      "mga"
+    ]
+  },
+  {
+    "iso": "MKD",
+    "name": "Macedonian Denar",
+    "aliases": [
+      "mkd"
+    ]
+  },
+  {
+    "iso": "MMK",
+    "name": "Myanma Kyat",
+    "aliases": [
+      "mmk"
+    ]
+  },
+  {
+    "iso": "MNT",
+    "name": "Mongolian Tugrik",
+    "aliases": [
+      "mnt"
+    ]
+  },
+  {
+    "iso": "MOP",
+    "name": "Macanese Pataca",
+    "aliases": [
+      "mop"
+    ]
+  },
+  {
+    "iso": "MRU",
+    "name": "Mauritanian Ouguiya",
+    "aliases": [
+      "mru"
+    ]
+  },
+  {
+    "iso": "MUR",
+    "name": "Mauritian Rupee",
+    "aliases": [
+      "mur"
+    ]
+  },
+  {
+    "iso": "MVR",
+    "name": "Maldivian Rufiyaa",
+    "aliases": [
+      "mvr"
+    ]
+  },
+  {
+    "iso": "MWK",
+    "name": "Malawian Kwacha",
+    "aliases": [
+      "mwk"
+    ]
+  },
+  {
+    "iso": "MXN",
+    "name": "Mexican Peso",
+    "aliases": [
+      "mxn"
+    ]
+  },
+  {
+    "iso": "MYR",
+    "name": "Malaysian Ringgit",
+    "aliases": [
+      "myr"
+    ]
+  },
+  {
+    "iso": "MZN",
+    "name": "Mozambican Metical",
+    "aliases": [
+      "mzn"
+    ]
+  },
+  {
+    "iso": "NAD",
+    "name": "Namibian Dollar",
+    "aliases": [
+      "nad"
+    ]
+  },
+  {
+    "iso": "NGN",
+    "name": "Nigerian Naira",
+    "aliases": [
+      "ngn"
+    ]
+  },
+  {
+    "iso": "NIO",
+    "name": "Nicaraguan Córdoba",
+    "aliases": [
+      "nio"
+    ]
+  },
+  {
+    "iso": "NOK",
+    "name": "Norwegian Krone",
+    "aliases": [
+      "nok"
+    ]
+  },
+  {
+    "iso": "NPR",
+    "name": "Nepalese Rupee",
+    "aliases": [
+      "npr"
+    ]
+  },
+  {
+    "iso": "NZD",
+    "name": "New Zealand Dollar",
+    "aliases": [
+      "nzd"
+    ]
+  },
+  {
+    "iso": "OMR",
+    "name": "Omani Rial",
+    "aliases": [
+      "omr"
+    ]
+  },
+  {
+    "iso": "PAB",
+    "name": "Panamanian Balboa",
+    "aliases": [
+      "pab"
+    ]
+  },
+  {
+    "iso": "PEN",
+    "name": "Peruvian Nuevo Sol",
+    "aliases": [
+      "pen"
+    ]
+  },
+  {
+    "iso": "PGK",
+    "name": "Papua New Guinean Kina",
+    "aliases": [
+      "pgk"
+    ]
+  },
+  {
+    "iso": "PHP",
+    "name": "Philippine Peso",
+    "aliases": [
+      "php"
+    ]
+  },
+  {
+    "iso": "PKR",
+    "name": "Pakistani Rupee",
+    "aliases": [
+      "pkr"
+    ]
+  },
+  {
+    "iso": "PLN",
+    "name": "Polish Zloty",
+    "aliases": [
+      "pln"
+    ]
+  },
+  {
+    "iso": "PYG",
+    "name": "Paraguayan Guarani",
+    "aliases": [
+      "pyg"
+    ]
+  },
+  {
+    "iso": "QAR",
+    "name": "Qatari Rial",
+    "aliases": [
+      "qar"
+    ]
+  },
+  {
+    "iso": "RON",
+    "name": "Romanian Leu",
+    "aliases": [
+      "ron"
+    ]
+  },
+  {
+    "iso": "RSD",
+    "name": "Serbian Dinar",
+    "aliases": [
+      "rsd"
+    ]
+  },
+  {
+    "iso": "RUB",
+    "name": "Russian Ruble",
+    "aliases": [
+      "rub"
+    ]
+  },
+  {
+    "iso": "RWF",
+    "name": "Rwandan Franc",
+    "aliases": [
+      "rwf"
+    ]
+  },
+  {
+    "iso": "SAR",
+    "name": "Saudi Riyal",
+    "aliases": [
+      "sar"
+    ]
+  },
+  {
+    "iso": "SBD",
+    "name": "Solomon Islands Dollar",
+    "aliases": [
+      "sbd"
+    ]
+  },
+  {
+    "iso": "SCR",
+    "name": "Seychellois Rupee",
+    "aliases": [
+      "scr"
+    ]
+  },
+  {
+    "iso": "SDG",
+    "name": "Sudanese Pound",
+    "aliases": [
+      "sdg"
+    ]
+  },
+  {
+    "iso": "SEK",
+    "name": "Swedish Krona",
+    "aliases": [
+      "sek"
+    ]
+  },
+  {
+    "iso": "SGD",
+    "name": "Singapore Dollar",
+    "aliases": [
+      "sgd"
+    ]
+  },
+  {
+    "iso": "SHP",
+    "name": "Saint Helena Pound",
+    "aliases": [
+      "shp"
+    ]
+  },
+  {
+    "iso": "SLL",
+    "name": "Sierra Leonean Leone",
+    "aliases": [
+      "sll"
+    ]
+  },
+  {
+    "iso": "SOS",
+    "name": "Somali Shilling",
+    "aliases": [
+      "sos"
+    ]
+  },
+  {
+    "iso": "SRD",
+    "name": "Surinamese Dollar",
+    "aliases": [
+      "srd"
+    ]
+  },
+  {
+    "iso": "SSP",
+    "name": "South Sudanese Pound",
+    "aliases": [
+      "ssp"
+    ]
+  },
+  {
+    "iso": "STD",
+    "name": "São Tomé and Príncipe Dobra (pre-2018)",
+    "aliases": [
+      "std"
+    ]
+  },
+  {
+    "iso": "STN",
+    "name": "São Tomé and Príncipe Dobra",
+    "aliases": [
+      "stn"
+    ]
+  },
+  {
+    "iso": "SVC",
+    "name": "Salvadoran Colón",
+    "aliases": [
+      "svc"
+    ]
+  },
+  {
+    "iso": "SYP",
+    "name": "Syrian Pound",
+    "aliases": [
+      "syp"
+    ]
+  },
+  {
+    "iso": "SZL",
+    "name": "Swazi Lilangeni",
+    "aliases": [
+      "szl"
+    ]
+  },
+  {
+    "iso": "THB",
+    "name": "Thai Baht",
+    "aliases": [
+      "thb"
+    ]
+  },
+  {
+    "iso": "TJS",
+    "name": "Tajikistani Somoni",
+    "aliases": [
+      "tjs"
+    ]
+  },
+  {
+    "iso": "TMT",
+    "name": "Turkmenistani Manat",
+    "aliases": [
+      "tmt"
+    ]
+  },
+  {
+    "iso": "TND",
+    "name": "Tunisian Dinar",
+    "aliases": [
+      "tnd"
+    ]
+  },
+  {
+    "iso": "TOP",
+    "name": "Tongan Pa'anga",
+    "aliases": [
+      "top"
+    ]
+  },
+  {
+    "iso": "TRY",
+    "name": "Turkish Lira",
+    "aliases": [
+      "try"
+    ]
+  },
+  {
+    "iso": "TTD",
+    "name": "Trinidad and Tobago Dollar",
+    "aliases": [
+      "ttd"
+    ]
+  },
+  {
+    "iso": "TWD",
+    "name": "New Taiwan Dollar",
+    "aliases": [
+      "twd"
+    ]
+  },
+  {
+    "iso": "TZS",
+    "name": "Tanzanian Shilling",
+    "aliases": [
+      "tzs"
+    ]
+  },
+  {
+    "iso": "UAH",
+    "name": "Ukrainian Hryvnia",
+    "aliases": [
+      "uah"
+    ]
+  },
+  {
+    "iso": "UGX",
+    "name": "Ugandan Shilling",
+    "aliases": [
+      "ugx"
+    ]
+  },
+  {
+    "iso": "USD",
+    "name": "United States Dollar",
+    "aliases": [
+      "usd"
+    ]
+  },
+  {
+    "iso": "UYU",
+    "name": "Uruguayan Peso",
+    "aliases": [
+      "uyu"
+    ]
+  },
+  {
+    "iso": "UZS",
+    "name": "Uzbekistan Som",
+    "aliases": [
+      "uzs"
+    ]
+  },
+  {
+    "iso": "VEF",
+    "name": "Venezuelan Bolívar Fuerte (Old)",
+    "aliases": [
+      "vef"
+    ]
+  },
+  {
+    "iso": "VES",
+    "name": "Venezuelan Bolívar Soberano",
+    "aliases": [
+      "ves"
+    ]
+  },
+  {
+    "iso": "VND",
+    "name": "Vietnamese Dong",
+    "aliases": [
+      "vnd"
+    ]
+  },
+  {
+    "iso": "VUV",
+    "name": "Vanuatu Vatu",
+    "aliases": [
+      "vuv"
+    ]
+  },
+  {
+    "iso": "WST",
+    "name": "Samoan Tala",
+    "aliases": [
+      "wst"
+    ]
+  },
+  {
+    "iso": "XAF",
+    "name": "CFA Franc BEAC",
+    "aliases": [
+      "xaf"
+    ]
+  },
+  {
+    "iso": "XAG",
+    "name": "Silver Ounce",
+    "aliases": [
+      "xag"
+    ]
+  },
+  {
+    "iso": "XAU",
+    "name": "Gold Ounce",
+    "aliases": [
+      "xau"
+    ]
+  },
+  {
+    "iso": "XCD",
+    "name": "East Caribbean Dollar",
+    "aliases": [
+      "xcd"
+    ]
+  },
+  {
+    "iso": "XDR",
+    "name": "Special Drawing Rights",
+    "aliases": [
+      "xdr"
+    ]
+  },
+  {
+    "iso": "XOF",
+    "name": "CFA Franc BCEAO",
+    "aliases": [
+      "xof"
+    ]
+  },
+  {
+    "iso": "XPD",
+    "name": "Palladium Ounce",
+    "aliases": [
+      "xpd"
+    ]
+  },
+  {
+    "iso": "XPF",
+    "name": "CFP Franc",
+    "aliases": [
+      "xpf"
+    ]
+  },
+  {
+    "iso": "XPT",
+    "name": "Platinum Ounce",
+    "aliases": [
+      "xpt"
+    ]
+  },
+  {
+    "iso": "YER",
+    "name": "Yemeni Rial",
+    "aliases": [
+      "yer"
+    ]
+  },
+  {
+    "iso": "ZAR",
+    "name": "South African Rand",
+    "aliases": [
+      "zar"
+    ]
+  },
+  {
+    "iso": "ZMW",
+    "name": "Zambian Kwacha",
+    "aliases": [
+      "zmw"
+    ]
+  },
+  {
+    "iso": "ZWL",
+    "name": "Zimbabwean Dollar",
+    "aliases": [
+      "zwl"
+    ]
+  }
+]

@@ -3,9 +3,9 @@ pwa currency converter mvp finish:
 
 To Do:
 
-- ~~delete button for each row didnt work – fixed by bypassing the web Alert and directly removing the currency~~
 
-- **also extend currencies.json to all currencies!**
+
+- ~~extend currencies.json to include all supported ISO currencies via automated script~~
 
 - calculations within input box feature. (a nice-to have extra)
 
@@ -18,6 +18,9 @@ Completely done:
 
 - dark theme. just change the colours so its dark, i dont need a toggle between light and dark. 
 
+- ~~delete button for each row didnt work – fixed by bypassing the web Alert and directly removing the currency~~
+
+- Added `scripts/updateCurrencies.mjs` to automate fetching of up-to-date currency list and regenerated `assets/currencies.json` (170 currencies).
 
 
 *DONT GET SUCKED INTO ENDLESS IMPROVEMENTS. THIS IS AN MVP. DO THE ABOVE LIST TO LEARN AND THEN MOVE ON!*
