@@ -1,52 +1,61 @@
-name: Build & Deploy Expo Web to GH Pages
+name: Deploy to GitHub Pages via Artifact
 
 on:
-  push:
-    branches:
-      - retry-githubpages      # trigger on the working branch
-  workflow_dispatch:          # allow manual runs
-
-permissions:
-  contents: write             # needed for the deployment step to push
+  workflow_run:
+    workflows: ["CI"]  # automatic deploy after CI
+    types: [completed]
+  workflow_dispatch:    # manual trigger from GitHub UI
 
 jobs:
-  build-and-deploy:
+  build:
+    # Run only when CI succeeded on main
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'feature/offline-cache')
     runs-on: ubuntu-latest
-
+    concurrency:
+      group: 'pages'
+      cancel-in-progress: true
     defaults:
       run:
         shell: bash
-        working-directory: currency-converter-app  # all commands run from the app dir
+        working-directory: currency-converter-app
 
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          # For manual runs (workflow_dispatch) github.event.workflow_run is undefined,
+          # so fall back to the branch ref associated with the workflow.
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.ref || github.event.workflow_run.head_sha }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Cache node modules
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('currency-converter-app/package-lock.json') }}
-
-      - name: Install dependencies
+      - name: Install dependencies (npm ci)
         run: npm ci --ignore-scripts
 
-      - name: Build web assets
-        # This runs the export script defined in package.json which outputs to dist-web/
+      - name: Build static web export (Expo)
         run: npm run export:web
 
-      - name: Deploy to GitHub Pages (gh-pages branch)
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: currency-converter-app/dist-web
-          force_orphan: true         # keep gh-pages history slim
-          commit_message: Deploy web build for ${{ github.sha }} 
+          path: ./currency-converter-app/dist-web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write     # to deploy to Pages
+      id-token: write  # to authenticate the deployment via OIDC
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 
