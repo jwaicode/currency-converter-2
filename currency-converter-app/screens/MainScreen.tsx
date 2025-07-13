@@ -8,6 +8,7 @@ import {
   Keyboard,
   Alert,
 } from 'react-native';
+import { colors } from '../utils/colors';
 import { CurrencyRow } from '../components/CurrencyRow';
 import { AddCurrencyButton } from '../components/AddCurrencyButton';
 import { SearchModal } from '../components/SearchModal';
@@ -134,7 +135,7 @@ export function MainScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: colors.background,
   },
   content: {
     flex: 1,
@@ -142,29 +143,29 @@ const styles = StyleSheet.create({
   header: {
     paddingHorizontal: 20,
     paddingVertical: 24,
-    backgroundColor: '#fff',
+    backgroundColor: colors.card,
     borderBottomWidth: 1,
-    borderBottomColor: '#f0f0f0',
+    borderBottomColor: colors.border,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333',
+    color: colors.textPrimary,
     marginBottom: 8,
   },
   staleWarning: {
     fontSize: 14,
-    color: '#ff8c00',
+    color: colors.stale,
     marginTop: 4,
   },
   errorText: {
     fontSize: 14,
-    color: '#ff4444',
+    color: colors.error,
     marginTop: 4,
   },
   loadingText: {
     fontSize: 14,
-    color: '#666',
+    color: colors.textSecondary,
     marginTop: 4,
   },
 });

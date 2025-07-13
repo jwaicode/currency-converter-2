@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { colors } from '../utils/colors';
 
 interface AddCurrencyButtonProps {
   onPress: () => void;
@@ -18,13 +19,13 @@ const styles = StyleSheet.create({
     margin: 20,
     paddingVertical: 16,
     paddingHorizontal: 24,
-    backgroundColor: '#007AFF',
+    backgroundColor: colors.accent,
     borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
   },
   buttonText: {
-    color: '#fff',
+    color: colors.textPrimary,
     fontSize: 16,
     fontWeight: '600',
   },

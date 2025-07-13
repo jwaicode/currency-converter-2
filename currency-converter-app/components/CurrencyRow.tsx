@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { validateNumericInput } from '../utils/filterCurrencies';
 import { currencies } from '../utils/filterCurrencies';
+import { colors } from '../utils/colors';
 
 interface CurrencyRowProps {
   iso: string;
@@ -79,9 +80,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 16,
     paddingHorizontal: 20,
-    backgroundColor: '#fff',
+    backgroundColor: colors.card,
     borderBottomWidth: 1,
-    borderBottomColor: '#f0f0f0',
+    borderBottomColor: colors.border,
   },
   leftSection: {
     flex: 1,
@@ -94,11 +95,11 @@ const styles = StyleSheet.create({
   isoCode: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: colors.textPrimary,
   },
   currencyName: {
     fontSize: 14,
-    color: '#666',
+    color: colors.textSecondary,
     marginTop: 2,
   },
   input: {
@@ -106,26 +107,27 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 12,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: colors.inputBorder,
     borderRadius: 8,
     fontSize: 16,
     textAlign: 'right',
-    backgroundColor: '#fafafa',
+    backgroundColor: colors.inputBg,
+    color: colors.textPrimary,
   },
   activeInput: {
-    borderColor: '#007AFF',
-    backgroundColor: '#fff',
+    borderColor: colors.accent,
+    backgroundColor: colors.card,
   },
   removeButton: {
     width: 28,
     height: 28,
     borderRadius: 14,
-    backgroundColor: '#ff4444',
+    backgroundColor: colors.error,
     alignItems: 'center',
     justifyContent: 'center',
   },
   removeButtonText: {
-    color: '#fff',
+    color: colors.textPrimary,
     fontSize: 18,
     fontWeight: 'bold',
     lineHeight: 18,

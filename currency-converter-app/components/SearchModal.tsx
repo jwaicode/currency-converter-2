@@ -10,6 +10,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { filterCurrencies, CurrencyMeta } from '../utils/filterCurrencies';
+import { colors } from '../utils/colors';
 
 interface SearchModalProps {
   visible: boolean;
@@ -100,7 +101,7 @@ export function SearchModal({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.background,
   },
   header: {
     flexDirection: 'row',
@@ -109,12 +110,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#f0f0f0',
+    borderBottomColor: colors.border,
+    backgroundColor: colors.card,
   },
   title: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#333',
+    color: colors.textPrimary,
   },
   closeButton: {
     paddingVertical: 8,
@@ -122,7 +124,7 @@ const styles = StyleSheet.create({
   },
   closeButtonText: {
     fontSize: 16,
-    color: '#007AFF',
+    color: colors.accent,
     fontWeight: '600',
   },
   searchContainer: {
@@ -133,10 +135,11 @@ const styles = StyleSheet.create({
     height: 44,
     paddingHorizontal: 16,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: colors.inputBorder,
     borderRadius: 12,
     fontSize: 16,
-    backgroundColor: '#fafafa',
+    backgroundColor: colors.inputBg,
+    color: colors.textPrimary,
   },
   list: {
     flex: 1,
@@ -145,7 +148,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#f0f0f0',
+    borderBottomColor: colors.border,
   },
   currencyInfo: {
     flexDirection: 'row',
@@ -155,12 +158,12 @@ const styles = StyleSheet.create({
   currencyIso: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: colors.textPrimary,
     minWidth: 50,
   },
   currencyName: {
     fontSize: 16,
-    color: '#666',
+    color: colors.textSecondary,
     flex: 1,
   },
 });
