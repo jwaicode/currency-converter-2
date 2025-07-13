@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - feature/offline-cache
   pull_request:
   workflow_dispatch:
 
