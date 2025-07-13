@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm ci
+      - run: npm install
       - run: npm run lint
       - run: npm test -- --watchAll=false --ci
       - run: npm run build 
