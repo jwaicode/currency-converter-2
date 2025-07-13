@@ -1,23 +1,65 @@
-name: CI
+name: CI & Deploy to GitHub Pages
 
 on:
   push:
+    branches:
+      - main
   pull_request:
+  workflow_dispatch:
+
+# Required for GitHub Pages deployment
+permissions:
+  contents: read   # allow checkout/clone
+  pages: write     # allow deployment
+  id-token: write  # OIDC token for authentication
 
 jobs:
-  build-test:
+  build:
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./currency-converter-app
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - run: npm install
-      - run: npm run lint
-      - run: npm test -- --watchAll=false --ci
-      - run: npm run build 
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Run tests
+        run: npm test -- --watchAll=false --ci
+
+      - name: Build static web export (Expo)
+        run: npm run export:web
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Path is relative to repository root because this action is not affected by run.defaults
+          path: currency-converter-app/dist-web
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push'  # prevent deployments from pull request runs
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 
