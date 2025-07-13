@@ -55,6 +55,9 @@ jobs:
       pages: write     # to deploy to Pages
       id-token: write  # to authenticate the deployment via OIDC
     steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 
